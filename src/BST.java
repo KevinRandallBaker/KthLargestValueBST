@@ -104,29 +104,42 @@ public class BST {
 		
 		String output = "";
 		List<Integer> array = new ArrayList<Integer>();
-		array = inOrderTraverse(this, array);
+		array = preOrderTraverse(this, array);
 		
-		output += "root:" + this.value + "\n";
+		int root = this.value;
+		output += "root: " + root + "\n";
 		
-		output += array;
+		output += array + "\n";
 		
-		output += "left values:" + "\n";
-		output += "right values:" + "\n";
+		output += "left values: ";
+		int current = root;
+		int i = 1;
+		while (current <= root) {
+			output += current + " ";
+			current = array.get(i++);
+		}
+		output += "\n";
+		
+		output += "right values: ";
+		while(i < array.size()) {
+			output += current + " ";
+			current = array.get(i++);
+		}
 		
 		output += "\n~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-";
 		
 		return output;
 	}
 	
-	public static List<Integer> inOrderTraverse(BST tree, List<Integer> array){
+	public static List<Integer> preOrderTraverse(BST tree, List<Integer> array){
 		
 		array.add(tree.value);
 		
 		if(tree.left != null)
-			inOrderTraverse(tree.left, array);
+			preOrderTraverse(tree.left, array);
 		
 		if(tree.right != null)
-			inOrderTraverse(tree.right, array);
+			preOrderTraverse(tree.right, array);
 		
 		return array;
 	}
