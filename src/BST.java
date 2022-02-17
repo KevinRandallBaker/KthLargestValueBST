@@ -117,18 +117,17 @@ public class BST {
 		output.append("root: " + root + "\n");
 
 		output.append("left values: ");
-		int current = root;
 		int i = 1;
+		int current = array.get(i);
 		while (current <= root) {
 			output.append(current + " ");
-			current = array.get(i++);
-		}
-		output.append("\n");
-		
-		output.append("right values: ");
-		--i;
-		while(i < array.size()) {
+			current = array.get(++i);
 			
+		}
+		
+		output.append("\n");
+		output.append("right values: ");
+		while(i < array.size()) {
 			current = array.get(i++);
 			output.append(current + " ");
 		}
