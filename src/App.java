@@ -4,7 +4,20 @@ public class App {
 
 	public static void main(String[] args) {
 		
+		int root = 10;
+		BST myBST = new BST(root);
 		
+		myBST.insert(5);
+		myBST.insert(15);
+		myBST.insert(2);
+		myBST.insert(5);
+		myBST.insert(13);
+		myBST.insert(22);
+		myBST.insert(1);
+		myBST.insert(14);
+		myBST.insert(12);
+		
+		System.out.println("myBST: " + myBST);
 		
 
 	}

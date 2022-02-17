@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class BST {
 	
@@ -101,26 +103,29 @@ public class BST {
 	public String toString() {
 		
 		String output = "";
+		List<Integer> array = new ArrayList<Integer>();
+		array = inOrderTraverse(this, array);
 		
-		output += "root(" + this.value + "): ";
-		output += "left values: ";
-		
-		BST current = this.left;
-		while(current != null) {
-			output += current.value + " ";
-			current = current.left;
-		}
-		
-		output += "\nright values: ";
-		current = this.right;
-		while(current != null) {
-			output += current.value + " ";
-			current = current.right;
-		}
+		output += "root:" + this.value + "\n";
+		output += "left values:" + "\n";
+		output += "right values:" + "\n";
 		
 		output += "\n~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-";
 		
 		return output;
+	}
+	
+	public static List<Integer> inOrderTraverse(BST tree, List<Integer> array){
+		
+		if(tree.left != null)
+			inOrderTraverse(tree.left, array);
+		
+		array.add(tree.value);
+		
+		if(tree.right != null)
+			inOrderTraverse(tree.right, array);
+		
+		return array;
 	}
 	
 	
