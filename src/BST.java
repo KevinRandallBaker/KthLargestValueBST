@@ -107,6 +107,9 @@ public class BST {
 		array = inOrderTraverse(this, array);
 		
 		output += "root:" + this.value + "\n";
+		
+		output += array;
+		
 		output += "left values:" + "\n";
 		output += "right values:" + "\n";
 		
@@ -117,10 +120,10 @@ public class BST {
 	
 	public static List<Integer> inOrderTraverse(BST tree, List<Integer> array){
 		
+		array.add(tree.value);
+		
 		if(tree.left != null)
 			inOrderTraverse(tree.left, array);
-		
-		array.add(tree.value);
 		
 		if(tree.right != null)
 			inOrderTraverse(tree.right, array);
