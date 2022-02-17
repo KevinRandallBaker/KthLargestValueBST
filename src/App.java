@@ -19,15 +19,20 @@ public class App {
 		
 		System.out.println("myBST: " + myBST);
 		
+		int k = 1;
+		System.out.print("kthLargestValue for k = " + k + ": ");
+		System.out.println(kthLargestValue(myBST, k));
+		
 
 	}
 
-	public int kthLargestValue(BST tree, int k) {
+	public static int kthLargestValue(BST tree, int k) {
 		
 		var nodeList = new ArrayList<Integer>();
 		traverseTree(tree, nodeList);
+		//System.out.println(nodeList.get(k - 1));
 		
-		return 0;
+		return nodeList.get(k - 1);
 	}
 	
 	public static void traverseTree(BST tree, ArrayList<Integer> nodeList) {
@@ -35,7 +40,7 @@ public class App {
 		if(tree.right != null)
 			traverseTree(tree.right, nodeList);
 		
-		System.out.print(tree.value + " ");
+		//System.out.print(tree.value + " ");
 		nodeList.add(tree.value);
 		
 		if(tree.left != null)

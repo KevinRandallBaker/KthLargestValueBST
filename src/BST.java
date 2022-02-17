@@ -111,6 +111,8 @@ public class BST {
 		List<Integer> array = new ArrayList<Integer>();
 		array = preOrderTraverse(this, array);
 		
+		System.out.println("array:" + array);
+		
 		int root = this.value;
 		output.append("root: " + root + "\n");
 
@@ -124,9 +126,11 @@ public class BST {
 		output.append("\n");
 		
 		output.append("right values: ");
+		--i;
 		while(i < array.size()) {
-			output.append(current + " ");
+			
 			current = array.get(i++);
+			output.append(current + " ");
 		}
 		
 		output.append("\n~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-");
