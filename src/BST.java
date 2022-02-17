@@ -102,6 +102,11 @@ public class BST {
 	@Override
 	public String toString() {
 		
+		if(this == null)
+			return "empty tree";
+		if(left == null && right == null)
+			return "" + this.value;
+		
 		StringBuilder output = new StringBuilder(50);
 		List<Integer> array = new ArrayList<Integer>();
 		array = preOrderTraverse(this, array);
