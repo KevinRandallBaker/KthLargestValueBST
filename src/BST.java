@@ -96,4 +96,32 @@ public class BST {
 		else
 			return left.getMinValue();
 	}
+	
+	@Override
+	public String toString() {
+		
+		String output = "";
+		
+		output += "root(" + this.value + "): ";
+		output += "left values: ";
+		
+		BST current = this.left;
+		while(current != null) {
+			output += current.value + " ";
+			current = current.left;
+		}
+		
+		output += "\nright values: ";
+		current = this.right;
+		while(current != null) {
+			output += current.value + " ";
+			current = current.right;
+		}
+		
+		output += "\n~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-";
+		
+		return output;
+	}
+	
+	
 }
