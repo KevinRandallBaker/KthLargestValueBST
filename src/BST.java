@@ -63,11 +63,13 @@ public class BST {
 	public void remove(int value, BST parent) {
 		
 		if(value < this.value) {
-			if(left != null)
+			if(left != null) {
 				left.remove(value, this);
+			}
 		}else if(value > this.value) {
-			if(right != null)
+			if(right != null) {
 				right.remove(value, this);
+			}
 		}else {
 			if(left != null && right != null) {
 				this.value = right.getMinValue();
